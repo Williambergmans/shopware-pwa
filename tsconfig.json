@@ -1,40 +1,25 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "dist",
-    "sourceMap": true,
-    "target": "es2019",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "allowJs": false,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
+    "target": "ES2018",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "esModuleInterop": true,
-    "removeComments": false,
-    "declaration": true,
-    "declarationMap": true,
-    "jsx": "preserve",
-    "lib": ["esnext", "dom"],
-    "types": ["jest", "node"],
-    "rootDir": ".",
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
     "paths": {
-      "@shopware-pwa/shopware-6-client": ["packages/shopware-6-client/src"],
-      "@shopware-pwa/composables": ["packages/composables/src"],
-      "@shopware-pwa/helpers": ["packages/helpers/src"],
-      "@shopware-pwa/commons": ["packages/commons"],
-      "@shopware-pwa/nuxt-module": ["packages/nuxt-module/src"]
+      "~/*": ["./*"],
+      "@/*": ["./.shopware-pwa/source/*"],
+      "sw-plugins/*": ["./.shopware-pwa/sw-plugins/*"]
     },
-    "preserveSymlinks": true
+    "types": ["@types/node", "@nuxt/types"]
   },
-  "include": [
-    "packages/global.d.ts",
-    "packages/*/src",
-    "packages/*/__tests__",
-    "node_modules/@shopware-pwa",
-    "packages/commons/nodeCommons.ts"
-  ]
+  "exclude": ["node_modules"]
 }
